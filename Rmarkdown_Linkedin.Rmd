@@ -1,0 +1,251 @@
+---
+title: Desigualdades raciais no tempo para início do tratamento do câncer de boca
+  e orofaringe no Brasil
+author: "Márcio V de G Affonso"
+date: "2022-11-28"
+output: html_document
+---
+
+Desenvolvido pelo Instituto Nacional de Câncer (INCA) o Integrador RHC -- Registro Hospitalar de Câncer é um sistema Web que consolida dados hospitalares provenientes dos Registros Hospitalares de Câncer de todo o Brasil.
+
+Além da consulta na própria plataforma Web, o Integrador RHC permite o download desses dados em formato `.dbf`. Com base nesses arquivos de acesso público, este estudo buscou descrever o panorama epidemiológico do câncer de boca no Brasil, no período de 2013 a 2019.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(foreign)
+library(gtsummary)
+library(rstatix)
+library(geobr)
+library(naniar)
+library(labelled)
+library(haven)
+library(stargazer)
+library(readxl)
+library(usethis)
+
+```
+
+## Leitura e armazenamento dos arquivos `.dbf` em um único dataframe
+
+Para o processo de leitura e armazenamento dos arquivos, utilizou-se o pacote `foreign` juntamente de um `for loop`.
+
+```{r}
+# Identificando os arquivos com padrão `.dbf` no diretório
+arquivos <- list.files(pattern = ".dbf")
+
+# Leitura dos arquivos e armazenamento em um dataframe com for loop
+## Criação do dataframe vazio
+dados <- data.frame() 
+
+## For loop
+for (file in arquivos) { 
+  dados_dbf <- read.dbf(file)
+  dados <- rbind(dados, dados_dbf)
+}
+```
+
+## Seleção das variáveis de interesse
+
+Haja vista que estão disponíveis mais de 40 variáveis para análise, neste estudo selecionamos apenas 12, as quais estão identificadas abaixo:
+
+```{r, echo=FALSE}
+dados_of <- dados %>% 
+  select(TPCASO, SEXO, IDADE, RACACOR, INSTRUC, ESTADRES, ANOPRIDI, DIAGANT,
+         LOCTUDET, ESTADIAM, DTDIAGNO, DATAINITRT)
+```
+
+```{r, echo=FALSE}
+colnames(dados_of)
+```
+
+## Processo de filtro inicial
+
+É possível classificar os casos do RHC em analíticos e não-analíticos. Os casos analíticos referem-se aos indivíduos que tiveram diagnóstico e tratamento iniciados numa mesma unidade hospitalar, enquanto os casos não analíticos referem-se àqueles que tiveram diagnóstico ou tratamento iniciado em uma unidade hospitalar e, posteriormente, migraram para outra unidade. Assim, a fim de evitar a duplicidade dos dados, analisaremos aqui apenas os dados analíticos.
+
+Além disso, considerando que avaliaremos apenas os indivíduos com Câncer de Boca e Orofaringe, é necessário selecionar somente as observações que contenham os códigos CID - Categoria 3 dígitos da Classificação Internacional de Doença - C00 a C06; C09 e C10.
+
+```{r}
+dados_of_cb <- dados_of %>% 
+  filter(TPCASO == "1", # Filtrando os casos analíticos
+         LOCTUDET %in% c("C00", "C01", "C02", "C03", "C04", "C05", "C06",
+                         "C09", "C10"))
+```
+
+## Processo de manipulação dos dados
+
+Para podermos visualizar, analisar e buscar insights nos dados, é necessária a manipulação das variáveis, criando novas ou recodificando aquelas que já existem no banco de dados.
+
+-   Abaixo podemos visualizar algumas alterações:
+    -   Remoção da variável TPCASO com a função `select`
+    -   Mudança do tipo das variáveis para character com a função `mutate`
+    -   Mudança de algumas variáveis para o formato Data, com a função `as.Date`
+    -   Mudança da variável IDADE para o formato numérico
+    -   Recodificação das variáveis ESTADIAM, LOCTUDET e INSTRUC com o `ifelse`
+    -   Criação da variável TIT, que representa o tempo para início de tratamento, com a função `difftime`
+
+```{r}
+dados_of_cb <- dados_of_cb %>% 
+  select(-TPCASO) %>% 
+  mutate_all(as.character) %>% 
+  mutate_at(vars(DTDIAGNO, DATAINITRT), as.Date, format = "%d/%m/%Y") %>% 
+  mutate_at(vars(IDADE), as.numeric) %>% 
+  mutate(ESTADIAM = ifelse(grepl("^1|2|II", ESTADIAM), "0", 
+                           ifelse(grepl("^3|4|IV", ESTADIAM), "1", NA))) %>%
+  mutate(LOCTUDET_2 = ifelse(LOCTUDET %in% c("C00", "C01", "C02", "C03", "C04", "C05", "C06"), "0", "1")) %>%
+  mutate(INSTRUC = ifelse(INSTRUC %in% c("1", "2"), "0", 
+                            ifelse(INSTRUC %in% c("3", "4", "5", "6"), "1", NA))) %>% 
+  mutate(TIT = difftime(DATAINITRT, DTDIAGNO, units = c("days"))) %>% 
+  mutate(TIT = as.numeric(TIT))
+```
+
+Ademais, entendendo a necessidade de unificar informações de diferentes fontes, utilizamos também a função `full_join` e `left_join` para acrescentar informações referentes à descrição do CID de cada neoplasia e à localização geográfica dos casos.
+
+```{r, echo=TRUE, results='hide'}
+# Incorporando um dataframe com dados das Unidades Federativas do Brasil com o pacote `geobr`
+mapa_brasil <- read_state(code_state = "all", year = 2010)
+
+## ´full_join` com o dataframe
+dados_of_cb <- dados_of_cb %>% 
+  full_join(mapa_brasil, by = c("ESTADRES" = "abbrev_state")) %>% 
+  select(-code_state, -code_region)
+
+# Incorporando um dataframe com a descrição dos CIDs, utilizado pelo DATASUS
+categoria_cid <- read.csv2("CID-10-CATEGORIAS.csv") %>% select(CAT, DESCRICAO)
+
+## corrigindo a codificação textual
+Encoding(categoria_cid$DESCRICAO) <- "latin1"
+
+## `left_join` com o dataframe
+dados_of_cb <- dados_of_cb %>% 
+  left_join(categoria_cid, by = c("LOCTUDET" = "CAT"))
+```
+
+A existência de valores faltantes (missings) também pode afetar a análise dos dados. Observou-se a presença desses valores na variável RACACOR, referente à raça/cor dos indivíduos. Assim, com a função `replace_with_na`, foram substituídos os valores 9 por `NA`.
+
+```{r}
+dados_of_cb <- dados_of_cb %>% 
+  replace_with_na(replace = list(RACACOR = c(9,99), DIAGANT = c(9,99)))
+```
+
+Para viabilizar a interpretação dos dados, foram adicionados labels às variáveis e às suas categorias.
+
+```{r}
+dados_of_cb <- dados_of_cb %>% 
+  set_value_labels(SEXO = c("Masculino" = "1", "Feminino" = "2"),
+                   RACACOR = c("Branca" = "1", "Preta" = "2", "Amarela" = "3",
+                               "Parda" = "4", "Indígena" = "5"),
+                   DIAGANT = c("Sem diag/Sem trat" = "1", "Com diag/Sem trat" = "2",
+                               "Com diag/Com trat" = "3", "outros" = "4"),
+                   ESTADIAM = c("Inicial" = "0", "Avançado" = "1"),
+                   INSTRUC = c("Menos de 8 anos de estudo" = "0", 
+                                 "Mais de 9 anos de estudo" = "1"),
+                   LOCTUDET_2 = c("Câncer de boca" = "0", "Câncer de orofaringe" = "1"))
+
+## Adicionando labels às variáveis
+var_label(dados_of_cb) <- list(IDADE = "Idade",
+                               SEXO = "Sexo",
+                               RACACOR = "Raça/cor",
+                               ANOPRIDI = "Ano do diagnóstico",
+                               DIAGANT = "Diagnóstico e tratamento prévios",
+                               LOCTUDET = "Localização da lesão",
+                               DTDIAGNO = "Data do diagnóstico",
+                               DATAINITRT = "Data do início do tratamento",
+                               DESCRICAO = "Neoplasia",
+                               INSTRUC = "Escolaridade",
+                               name_state = "Estado de residência",
+                               name_region = "Região de residência",
+                               ESTADIAM = "Estadiamento da lesão",
+                               TIT = "Tempo para início do tratamento")
+```
+
+## Processo de filtro final
+
+Após a manipulação e organização dos dados, aplicou-se o filtro na idade dos indivíduos, no período em que os casos foram diagnosticados e tratados e também no tempo para início do tratamento. A aplicação desses filtros buscou evitar possíveis outliers que pudessem prejudicar a análise dos dados.
+
+```{r}
+dados_of_cb <- dados_of_cb %>% 
+  filter(between(IDADE, 18, 100),
+         DTDIAGNO >= c("2013-01-01"), 
+         DTDIAGNO <= c("2019-12-31"),
+         DATAINITRT >= c("2013-01-01"), 
+         DATAINITRT <= c("2019-12-31"),
+         DIAGANT %in% c("1","2")) %>%  
+  filter(between(TIT, 0, 365))
+```
+
+## Sumarização dos resultados
+
+Abaixo podemos observar uma tabela que sumariza os resultados.
+
+```{r, echo=FALSE}
+glimpse(dados_of_cb)
+
+dados_of_cb %>% 
+  select(SEXO, IDADE, RACACOR, INSTRUC, 
+         name_state, name_region, 
+         DESCRICAO, LOCTUDET_2, ESTADIAM, 
+         TIT) %>% 
+  mutate_at(vars(SEXO, RACACOR, INSTRUC, LOCTUDET_2, ESTADIAM), haven::as_factor) %>% 
+  tbl_summary(by = LOCTUDET_2, missing_text = "Desconhecido") %>% 
+  modify_header(label = "**Variável**") %>% 
+  bold_labels()
+```
+
+## Tempo para início de tratamento de acordo com a Raça/Cor
+
+Para identificar se houve diferença no tempo para início de tratamento entre as diferentes categorias da variável Raça/Cor, foi utilizado o teste de Kruskal-Wallis, devido à distribuição não normal dos dados, seguido pelo pós-teste de Dunn. Os resultados podem ser observados abaixo.
+
+```{r, echo=FALSE}
+
+medianas <- dados_of_cb %>% 
+  group_by(LOCTUDET_2, RACACOR) %>%
+  drop_na(RACACOR) %>% 
+  get_summary_stats(TIT) %>% 
+  select(RACACOR, LOCTUDET_2, median)
+
+cid_nomes <- as_labeller(c("0" = "Câncer de boca",
+                           "1" = "Câncer de orofaringe"))
+## Boxplot
+dados_of_cb %>%
+  drop_na(RACACOR) %>% 
+  ggplot +
+  geom_violin(aes(x = RACACOR, y = TIT, fill = RACACOR)) +
+  geom_boxplot(aes(x = RACACOR, y = TIT, fill = RACACOR), 
+               width=0.1, color="black", alpha=0.2) +
+  facet_wrap(~LOCTUDET_2, labeller = cid_nomes) +
+  theme_classic() +
+  theme(text = element_text(family = "serif", size = 18),
+        legend.position = "bottom",
+        axis.ticks.x = element_blank(),
+        axis.text.x = element_blank()) +
+  labs(y = "Tempo para início de tratamento (em dias)",
+       x = "") +
+  scale_fill_discrete(name = "Raça/cor",
+                      labels = c("Branca", "Preta", "Amarela", "Parda", "Indigena")) +
+  geom_label(data = medianas, 
+             aes(y = median, x = RACACOR, 
+                 label = paste(median, "dias"),
+                 hjust = 0.5, vjust = 0.4))
+```
+
+O teste de kruskal-wallis confirma que há diferença estatisticamente significante, como pode ser observado abaixo.
+
+```{r}
+## Kruskal-wallis
+dados_of_cb %>% 
+  group_by(LOCTUDET_2) %>% 
+  kruskal_test(TIT ~ RACACOR)
+
+### Pós teste
+dados_of_cb %>% 
+  group_by(LOCTUDET_2) %>% 
+  dunn_test(TIT ~ RACACOR, p.adjust.method = 'bonferroni')
+```
+
+
+## Conclusão
+
+Os resultados nos indicam que indivíduos considerados pretos e pardos demoraram mais tempo para iniciarem seus respectivos tratamentos oncológicos. Aspectos relacionados aos Determinantes Sociais da Saúde, especialmente status socioeconômico, escolaridade e a própria raça/cor, influenciam também no acesso e na utilização dos serviços de saúde. 
+Este estudo invoca a necessidade de aprofundamento nesses dados, buscando traçar com mais precisão o perfil dos indivíduos que estão mais suscetíveis e vulneráveis a essas condições.
