@@ -1,9 +1,9 @@
 ---
 title: Desigualdades raciais no tempo para início do tratamento do câncer de boca
-  e orofaringe no Brasil
+  e orofaringe no Brasil, no período de 2013 a 2019
 author: "Márcio V de G Affonso"
 date: "2022-11-28"
-output: html_document
+output: github_document
 ---
 
 Desenvolvido pelo Instituto Nacional de Câncer (INCA) o Integrador RHC -- Registro Hospitalar de Câncer é um sistema Web que consolida dados hospitalares provenientes dos Registros Hospitalares de Câncer de todo o Brasil.
