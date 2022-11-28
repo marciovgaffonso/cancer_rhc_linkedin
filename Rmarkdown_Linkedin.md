@@ -213,12 +213,12 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
     ## $ geom        <MULTIPOLYGON [°]> MULTIPOLYGON (((-41.85946 -..., MULTIPOLYGON …
     ## $ DESCRICAO   <chr> "Neoplasia maligna de outras partes e de partes não especi…
 
-<div id="adfsewyofx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="bezcnxlaay" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#adfsewyofx .gt_table {
+#bezcnxlaay .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -243,7 +243,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   border-left-color: #D3D3D3;
 }
 
-#adfsewyofx .gt_heading {
+#bezcnxlaay .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -255,7 +255,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   border-right-color: #D3D3D3;
 }
 
-#adfsewyofx .gt_title {
+#bezcnxlaay .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -267,7 +267,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   border-bottom-width: 0;
 }
 
-#adfsewyofx .gt_subtitle {
+#bezcnxlaay .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -279,13 +279,13 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   border-top-width: 0;
 }
 
-#adfsewyofx .gt_bottom_border {
+#bezcnxlaay .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#adfsewyofx .gt_col_headings {
+#bezcnxlaay .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -300,7 +300,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   border-right-color: #D3D3D3;
 }
 
-#adfsewyofx .gt_col_heading {
+#bezcnxlaay .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -320,7 +320,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   overflow-x: hidden;
 }
 
-#adfsewyofx .gt_column_spanner_outer {
+#bezcnxlaay .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -332,15 +332,15 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   padding-right: 4px;
 }
 
-#adfsewyofx .gt_column_spanner_outer:first-child {
+#bezcnxlaay .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#adfsewyofx .gt_column_spanner_outer:last-child {
+#bezcnxlaay .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#adfsewyofx .gt_column_spanner {
+#bezcnxlaay .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -352,7 +352,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   width: 100%;
 }
 
-#adfsewyofx .gt_group_heading {
+#bezcnxlaay .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -377,7 +377,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   vertical-align: middle;
 }
 
-#adfsewyofx .gt_empty_group_heading {
+#bezcnxlaay .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -392,15 +392,15 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   vertical-align: middle;
 }
 
-#adfsewyofx .gt_from_md > :first-child {
+#bezcnxlaay .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#adfsewyofx .gt_from_md > :last-child {
+#bezcnxlaay .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#adfsewyofx .gt_row {
+#bezcnxlaay .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -419,7 +419,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   overflow-x: hidden;
 }
 
-#adfsewyofx .gt_stub {
+#bezcnxlaay .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -432,7 +432,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   padding-right: 5px;
 }
 
-#adfsewyofx .gt_stub_row_group {
+#bezcnxlaay .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -446,11 +446,11 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   vertical-align: top;
 }
 
-#adfsewyofx .gt_row_group_first td {
+#bezcnxlaay .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#adfsewyofx .gt_summary_row {
+#bezcnxlaay .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -460,16 +460,16 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   padding-right: 5px;
 }
 
-#adfsewyofx .gt_first_summary_row {
+#bezcnxlaay .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#adfsewyofx .gt_first_summary_row.thick {
+#bezcnxlaay .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#adfsewyofx .gt_last_summary_row {
+#bezcnxlaay .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -479,7 +479,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   border-bottom-color: #D3D3D3;
 }
 
-#adfsewyofx .gt_grand_summary_row {
+#bezcnxlaay .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -489,7 +489,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   padding-right: 5px;
 }
 
-#adfsewyofx .gt_first_grand_summary_row {
+#bezcnxlaay .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -499,11 +499,11 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   border-top-color: #D3D3D3;
 }
 
-#adfsewyofx .gt_striped {
+#bezcnxlaay .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#adfsewyofx .gt_table_body {
+#bezcnxlaay .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -512,7 +512,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   border-bottom-color: #D3D3D3;
 }
 
-#adfsewyofx .gt_footnotes {
+#bezcnxlaay .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -526,7 +526,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   border-right-color: #D3D3D3;
 }
 
-#adfsewyofx .gt_footnote {
+#bezcnxlaay .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -535,7 +535,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   padding-right: 5px;
 }
 
-#adfsewyofx .gt_sourcenotes {
+#bezcnxlaay .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -549,7 +549,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   border-right-color: #D3D3D3;
 }
 
-#adfsewyofx .gt_sourcenote {
+#bezcnxlaay .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -557,36 +557,36 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   padding-right: 5px;
 }
 
-#adfsewyofx .gt_left {
+#bezcnxlaay .gt_left {
   text-align: left;
 }
 
-#adfsewyofx .gt_center {
+#bezcnxlaay .gt_center {
   text-align: center;
 }
 
-#adfsewyofx .gt_right {
+#bezcnxlaay .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#adfsewyofx .gt_font_normal {
+#bezcnxlaay .gt_font_normal {
   font-weight: normal;
 }
 
-#adfsewyofx .gt_font_bold {
+#bezcnxlaay .gt_font_bold {
   font-weight: bold;
 }
 
-#adfsewyofx .gt_font_italic {
+#bezcnxlaay .gt_font_italic {
   font-style: italic;
 }
 
-#adfsewyofx .gt_super {
+#bezcnxlaay .gt_super {
   font-size: 65%;
 }
 
-#adfsewyofx .gt_two_val_uncert {
+#bezcnxlaay .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -595,31 +595,31 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   margin-left: 0.1em;
 }
 
-#adfsewyofx .gt_footnote_marks {
+#bezcnxlaay .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#adfsewyofx .gt_asterisk {
+#bezcnxlaay .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#adfsewyofx .gt_slash_mark {
+#bezcnxlaay .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#adfsewyofx .gt_fraction_numerator {
+#bezcnxlaay .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#adfsewyofx .gt_fraction_denominator {
+#bezcnxlaay .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -629,13 +629,13 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Variável</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Characteristic</strong></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>Câncer de boca</strong>, N = 29,933<sup class="gt_footnote_marks">1</sup></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>Câncer de orofaringe</strong>, N = 12,246<sup class="gt_footnote_marks">1</sup></th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left" style="font-weight: bold;">Sexo</td>
+    <tr><td class="gt_row gt_left">Sexo</td>
 <td class="gt_row gt_center"></td>
 <td class="gt_row gt_center"></td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Masculino</td>
@@ -644,10 +644,10 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Feminino</td>
 <td class="gt_row gt_center">7,179 (24%)</td>
 <td class="gt_row gt_center">1,973 (16%)</td></tr>
-    <tr><td class="gt_row gt_left" style="font-weight: bold;">Idade</td>
+    <tr><td class="gt_row gt_left">Idade</td>
 <td class="gt_row gt_center">60 (53, 68)</td>
 <td class="gt_row gt_center">58 (52, 65)</td></tr>
-    <tr><td class="gt_row gt_left" style="font-weight: bold;">Raça/cor</td>
+    <tr><td class="gt_row gt_left">Raça/cor</td>
 <td class="gt_row gt_center"></td>
 <td class="gt_row gt_center"></td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Branca</td>
@@ -665,10 +665,10 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Indígena</td>
 <td class="gt_row gt_center">16 (&lt;0.1%)</td>
 <td class="gt_row gt_center">6 (&lt;0.1%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Desconhecido</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
 <td class="gt_row gt_center">10,952</td>
 <td class="gt_row gt_center">4,173</td></tr>
-    <tr><td class="gt_row gt_left" style="font-weight: bold;">Escolaridade</td>
+    <tr><td class="gt_row gt_left">Escolaridade</td>
 <td class="gt_row gt_center"></td>
 <td class="gt_row gt_center"></td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Menos de 8 anos de estudo</td>
@@ -677,10 +677,10 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Mais de 9 anos de estudo</td>
 <td class="gt_row gt_center">9,630 (39%)</td>
 <td class="gt_row gt_center">4,171 (42%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Desconhecido</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
 <td class="gt_row gt_center">5,395</td>
 <td class="gt_row gt_center">2,343</td></tr>
-    <tr><td class="gt_row gt_left" style="font-weight: bold;">Estado de residência</td>
+    <tr><td class="gt_row gt_left">Estado de residência</td>
 <td class="gt_row gt_center"></td>
 <td class="gt_row gt_center"></td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Acre</td>
@@ -764,10 +764,10 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Tocantins</td>
 <td class="gt_row gt_center">160 (0.5%)</td>
 <td class="gt_row gt_center">79 (0.6%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Desconhecido</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
 <td class="gt_row gt_center">94</td>
 <td class="gt_row gt_center">44</td></tr>
-    <tr><td class="gt_row gt_left" style="font-weight: bold;">Região de residência</td>
+    <tr><td class="gt_row gt_left">Região de residência</td>
 <td class="gt_row gt_center"></td>
 <td class="gt_row gt_center"></td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Centro Oeste</td>
@@ -785,10 +785,10 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Sul</td>
 <td class="gt_row gt_center">4,987 (17%)</td>
 <td class="gt_row gt_center">2,330 (19%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Desconhecido</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
 <td class="gt_row gt_center">94</td>
 <td class="gt_row gt_center">44</td></tr>
-    <tr><td class="gt_row gt_left" style="font-weight: bold;">Neoplasia</td>
+    <tr><td class="gt_row gt_left">Neoplasia</td>
 <td class="gt_row gt_center"></td>
 <td class="gt_row gt_center"></td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Neoplasia maligna da amígdala</td>
@@ -818,7 +818,7 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Neoplasia maligna do palato</td>
 <td class="gt_row gt_center">4,293 (14%)</td>
 <td class="gt_row gt_center">0 (0%)</td></tr>
-    <tr><td class="gt_row gt_left" style="font-weight: bold;">Estadiamento da lesão</td>
+    <tr><td class="gt_row gt_left">Estadiamento da lesão</td>
 <td class="gt_row gt_center"></td>
 <td class="gt_row gt_center"></td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Inicial</td>
@@ -827,10 +827,10 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Avançado</td>
 <td class="gt_row gt_center">16,644 (72%)</td>
 <td class="gt_row gt_center">7,053 (88%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Desconhecido</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
 <td class="gt_row gt_center">6,896</td>
 <td class="gt_row gt_center">4,213</td></tr>
-    <tr><td class="gt_row gt_left" style="font-weight: bold;">Tempo para início do tratamento</td>
+    <tr><td class="gt_row gt_left">Tempo para início do tratamento</td>
 <td class="gt_row gt_center">65 (32, 107)</td>
 <td class="gt_row gt_center">62 (33, 99)</td></tr>
   </tbody>

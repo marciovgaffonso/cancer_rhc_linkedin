@@ -188,9 +188,7 @@ dados_of_cb %>%
          DESCRICAO, LOCTUDET_2, ESTADIAM, 
          TIT) %>% 
   mutate_at(vars(SEXO, RACACOR, INSTRUC, LOCTUDET_2, ESTADIAM), haven::as_factor) %>% 
-  tbl_summary(by = LOCTUDET_2, missing_text = "Desconhecido") %>% 
-  modify_header(label = "**Variável**") %>% 
-  bold_labels()
+  tbl_summary(by = LOCTUDET_2)
 ```
 
 ## Tempo para início de tratamento de acordo com a Raça/Cor
