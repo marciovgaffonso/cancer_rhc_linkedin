@@ -72,17 +72,16 @@ Para podermos visualizar, analisar e buscar insights nos dados, é
 necessária a manipulação das variáveis, criando novas ou recodificando
 aquelas que já existem no banco de dados.
 
--   Abaixo podemos visualizar algumas alterações:
-    -   Remoção da variável TPCASO com a função `select`
-    -   Mudança do tipo das variáveis para character com a função
-        `mutate`
-    -   Mudança de algumas variáveis para o formato Data, com a função
-        `as.Date`
-    -   Mudança da variável IDADE para o formato numérico
-    -   Recodificação das variáveis ESTADIAM, LOCTUDET e INSTRUC com o
-        `ifelse`
-    -   Criação da variável TIT, que representa o tempo para início de
-        tratamento, com a função `difftime`
+- Abaixo podemos visualizar algumas alterações:
+  - Remoção da variável TPCASO com a função `select`
+  - Mudança do tipo das variáveis para character com a função `mutate`
+  - Mudança de algumas variáveis para o formato Data, com a função
+    `as.Date`
+  - Mudança da variável IDADE para o formato numérico
+  - Recodificação das variáveis ESTADIAM, LOCTUDET e INSTRUC com o
+    `ifelse`
+  - Criação da variável TIT, que representa o tempo para início de
+    tratamento, com a função `difftime`
 
 ``` r
 dados_of_cb <- dados_of_cb %>% 
@@ -213,635 +212,74 @@ Abaixo podemos observar uma tabela que sumariza os resultados.
     ## $ geom        <MULTIPOLYGON [°]> MULTIPOLYGON (((-41.85946 -..., MULTIPOLYGON …
     ## $ DESCRICAO   <chr> "Neoplasia maligna de outras partes e de partes não especi…
 
-<div id="qxprdqztui" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
-}
-
-#qxprdqztui .gt_table {
-  display: table;
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#qxprdqztui .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#qxprdqztui .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#qxprdqztui .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#qxprdqztui .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#qxprdqztui .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#qxprdqztui .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#qxprdqztui .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#qxprdqztui .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#qxprdqztui .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#qxprdqztui .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#qxprdqztui .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#qxprdqztui .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#qxprdqztui .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#qxprdqztui .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#qxprdqztui .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#qxprdqztui .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qxprdqztui .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#qxprdqztui .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#qxprdqztui .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qxprdqztui .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#qxprdqztui .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#qxprdqztui .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#qxprdqztui .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qxprdqztui .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#qxprdqztui .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#qxprdqztui .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#qxprdqztui .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#qxprdqztui .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qxprdqztui .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#qxprdqztui .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qxprdqztui .gt_left {
-  text-align: left;
-}
-
-#qxprdqztui .gt_center {
-  text-align: center;
-}
-
-#qxprdqztui .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#qxprdqztui .gt_font_normal {
-  font-weight: normal;
-}
-
-#qxprdqztui .gt_font_bold {
-  font-weight: bold;
-}
-
-#qxprdqztui .gt_font_italic {
-  font-style: italic;
-}
-
-#qxprdqztui .gt_super {
-  font-size: 65%;
-}
-
-#qxprdqztui .gt_two_val_uncert {
-  display: inline-block;
-  line-height: 1em;
-  text-align: right;
-  font-size: 60%;
-  vertical-align: -0.25em;
-  margin-left: 0.1em;
-}
-
-#qxprdqztui .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
-  font-size: 75%;
-  vertical-align: 0.4em;
-}
-
-#qxprdqztui .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#qxprdqztui .gt_slash_mark {
-  font-size: 0.7em;
-  line-height: 0.7em;
-  vertical-align: 0.15em;
-}
-
-#qxprdqztui .gt_fraction_numerator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: 0.45em;
-}
-
-#qxprdqztui .gt_fraction_denominator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: -0.05em;
-}
-</style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>Câncer de boca</strong>, N = 29,933<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>Câncer de orofaringe</strong>, N = 12,246<sup class="gt_footnote_marks">1</sup></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">Sexo</td>
-<td class="gt_row gt_center"></td>
-<td class="gt_row gt_center"></td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Masculino</td>
-<td class="gt_row gt_center">22,754 (76%)</td>
-<td class="gt_row gt_center">10,273 (84%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Feminino</td>
-<td class="gt_row gt_center">7,179 (24%)</td>
-<td class="gt_row gt_center">1,973 (16%)</td></tr>
-    <tr><td class="gt_row gt_left">Idade</td>
-<td class="gt_row gt_center">60 (53, 68)</td>
-<td class="gt_row gt_center">58 (52, 65)</td></tr>
-    <tr><td class="gt_row gt_left">Raça/cor</td>
-<td class="gt_row gt_center"></td>
-<td class="gt_row gt_center"></td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Branca</td>
-<td class="gt_row gt_center">8,048 (42%)</td>
-<td class="gt_row gt_center">3,378 (42%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Preta</td>
-<td class="gt_row gt_center">1,334 (7.0%)</td>
-<td class="gt_row gt_center">613 (7.6%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Amarela</td>
-<td class="gt_row gt_center">129 (0.7%)</td>
-<td class="gt_row gt_center">62 (0.8%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Parda</td>
-<td class="gt_row gt_center">9,454 (50%)</td>
-<td class="gt_row gt_center">4,014 (50%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Indígena</td>
-<td class="gt_row gt_center">16 (&lt;0.1%)</td>
-<td class="gt_row gt_center">6 (&lt;0.1%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
-<td class="gt_row gt_center">10,952</td>
-<td class="gt_row gt_center">4,173</td></tr>
-    <tr><td class="gt_row gt_left">Escolaridade</td>
-<td class="gt_row gt_center"></td>
-<td class="gt_row gt_center"></td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Menos de 8 anos de estudo</td>
-<td class="gt_row gt_center">14,908 (61%)</td>
-<td class="gt_row gt_center">5,732 (58%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Mais de 9 anos de estudo</td>
-<td class="gt_row gt_center">9,630 (39%)</td>
-<td class="gt_row gt_center">4,171 (42%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
-<td class="gt_row gt_center">5,395</td>
-<td class="gt_row gt_center">2,343</td></tr>
-    <tr><td class="gt_row gt_left">Estado de residência</td>
-<td class="gt_row gt_center"></td>
-<td class="gt_row gt_center"></td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Acre</td>
-<td class="gt_row gt_center">26 (&lt;0.1%)</td>
-<td class="gt_row gt_center">17 (0.1%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Alagoas</td>
-<td class="gt_row gt_center">420 (1.4%)</td>
-<td class="gt_row gt_center">139 (1.1%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Amapá</td>
-<td class="gt_row gt_center">28 (&lt;0.1%)</td>
-<td class="gt_row gt_center">20 (0.2%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Amazonas</td>
-<td class="gt_row gt_center">171 (0.6%)</td>
-<td class="gt_row gt_center">96 (0.8%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Bahia</td>
-<td class="gt_row gt_center">1,532 (5.1%)</td>
-<td class="gt_row gt_center">744 (6.1%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Ceará</td>
-<td class="gt_row gt_center">1,082 (3.6%)</td>
-<td class="gt_row gt_center">366 (3.0%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Distrito Federal</td>
-<td class="gt_row gt_center">133 (0.4%)</td>
-<td class="gt_row gt_center">75 (0.6%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Espirito Santo</td>
-<td class="gt_row gt_center">929 (3.1%)</td>
-<td class="gt_row gt_center">413 (3.4%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Goiás</td>
-<td class="gt_row gt_center">169 (0.6%)</td>
-<td class="gt_row gt_center">61 (0.5%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Maranhão</td>
-<td class="gt_row gt_center">406 (1.4%)</td>
-<td class="gt_row gt_center">149 (1.2%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Mato Grosso</td>
-<td class="gt_row gt_center">309 (1.0%)</td>
-<td class="gt_row gt_center">166 (1.4%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Mato Grosso Do Sul</td>
-<td class="gt_row gt_center">289 (1.0%)</td>
-<td class="gt_row gt_center">128 (1.0%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Minas Gerais</td>
-<td class="gt_row gt_center">4,651 (16%)</td>
-<td class="gt_row gt_center">1,976 (16%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Pará</td>
-<td class="gt_row gt_center">419 (1.4%)</td>
-<td class="gt_row gt_center">117 (1.0%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Paraíba</td>
-<td class="gt_row gt_center">834 (2.8%)</td>
-<td class="gt_row gt_center">276 (2.3%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Paraná</td>
-<td class="gt_row gt_center">2,178 (7.3%)</td>
-<td class="gt_row gt_center">765 (6.3%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Pernambuco</td>
-<td class="gt_row gt_center">1,305 (4.4%)</td>
-<td class="gt_row gt_center">420 (3.4%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Piauí</td>
-<td class="gt_row gt_center">322 (1.1%)</td>
-<td class="gt_row gt_center">104 (0.9%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Rio De Janeiro</td>
-<td class="gt_row gt_center">1,652 (5.5%)</td>
-<td class="gt_row gt_center">764 (6.3%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Rio Grande Do Norte</td>
-<td class="gt_row gt_center">402 (1.3%)</td>
-<td class="gt_row gt_center">181 (1.5%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Rio Grande Do Sul</td>
-<td class="gt_row gt_center">1,772 (5.9%)</td>
-<td class="gt_row gt_center">1,007 (8.3%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Rondônia</td>
-<td class="gt_row gt_center">165 (0.6%)</td>
-<td class="gt_row gt_center">84 (0.7%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Roraima</td>
-<td class="gt_row gt_center">10 (&lt;0.1%)</td>
-<td class="gt_row gt_center">12 (&lt;0.1%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Santa Catarina</td>
-<td class="gt_row gt_center">1,037 (3.5%)</td>
-<td class="gt_row gt_center">558 (4.6%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">São Paulo</td>
-<td class="gt_row gt_center">9,225 (31%)</td>
-<td class="gt_row gt_center">3,433 (28%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Sergipe</td>
-<td class="gt_row gt_center">213 (0.7%)</td>
-<td class="gt_row gt_center">52 (0.4%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Tocantins</td>
-<td class="gt_row gt_center">160 (0.5%)</td>
-<td class="gt_row gt_center">79 (0.6%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
-<td class="gt_row gt_center">94</td>
-<td class="gt_row gt_center">44</td></tr>
-    <tr><td class="gt_row gt_left">Região de residência</td>
-<td class="gt_row gt_center"></td>
-<td class="gt_row gt_center"></td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Centro Oeste</td>
-<td class="gt_row gt_center">900 (3.0%)</td>
-<td class="gt_row gt_center">430 (3.5%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Nordeste</td>
-<td class="gt_row gt_center">6,516 (22%)</td>
-<td class="gt_row gt_center">2,431 (20%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Norte</td>
-<td class="gt_row gt_center">979 (3.3%)</td>
-<td class="gt_row gt_center">425 (3.5%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Sudeste</td>
-<td class="gt_row gt_center">16,457 (55%)</td>
-<td class="gt_row gt_center">6,586 (54%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Sul</td>
-<td class="gt_row gt_center">4,987 (17%)</td>
-<td class="gt_row gt_center">2,330 (19%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
-<td class="gt_row gt_center">94</td>
-<td class="gt_row gt_center">44</td></tr>
-    <tr><td class="gt_row gt_left">Neoplasia</td>
-<td class="gt_row gt_center"></td>
-<td class="gt_row gt_center"></td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Neoplasia maligna da amígdala</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">3,658 (30%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Neoplasia maligna da base da língua</td>
-<td class="gt_row gt_center">5,239 (18%)</td>
-<td class="gt_row gt_center">0 (0%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Neoplasia maligna da gengiva</td>
-<td class="gt_row gt_center">943 (3.2%)</td>
-<td class="gt_row gt_center">0 (0%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Neoplasia maligna da orofaringe</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">8,588 (70%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Neoplasia maligna de outras partes e de partes não especificadas da boca</td>
-<td class="gt_row gt_center">4,519 (15%)</td>
-<td class="gt_row gt_center">0 (0%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Neoplasia maligna de outras partes e de partes não especificadas da língua</td>
-<td class="gt_row gt_center">8,581 (29%)</td>
-<td class="gt_row gt_center">0 (0%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Neoplasia maligna do assoalho da boca</td>
-<td class="gt_row gt_center">3,844 (13%)</td>
-<td class="gt_row gt_center">0 (0%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Neoplasia maligna do lábio</td>
-<td class="gt_row gt_center">2,514 (8.4%)</td>
-<td class="gt_row gt_center">0 (0%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Neoplasia maligna do palato</td>
-<td class="gt_row gt_center">4,293 (14%)</td>
-<td class="gt_row gt_center">0 (0%)</td></tr>
-    <tr><td class="gt_row gt_left">Estadiamento da lesão</td>
-<td class="gt_row gt_center"></td>
-<td class="gt_row gt_center"></td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Inicial</td>
-<td class="gt_row gt_center">6,393 (28%)</td>
-<td class="gt_row gt_center">980 (12%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Avançado</td>
-<td class="gt_row gt_center">16,644 (72%)</td>
-<td class="gt_row gt_center">7,053 (88%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
-<td class="gt_row gt_center">6,896</td>
-<td class="gt_row gt_center">4,213</td></tr>
-    <tr><td class="gt_row gt_left">Tempo para início do tratamento</td>
-<td class="gt_row gt_center">65 (32, 107)</td>
-<td class="gt_row gt_center">62 (33, 99)</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">1</sup> n (%); Median (IQR)</td>
-    </tr>
-  </tfoot>
-</table>
-</div>
+| **Characteristic**                                                         | **Câncer de boca**, N = 29,933 | **Câncer de orofaringe**, N = 12,246 |
+|:---------------------------------------------------------------------------|:------------------------------:|:------------------------------------:|
+| Sexo                                                                       |                                |                                      |
+| Masculino                                                                  |          22,754 (76%)          |             10,273 (84%)             |
+| Feminino                                                                   |          7,179 (24%)           |             1,973 (16%)              |
+| Idade                                                                      |          60 (53, 68)           |             58 (52, 65)              |
+| Raça/cor                                                                   |                                |                                      |
+| Branca                                                                     |          8,048 (42%)           |             3,378 (42%)              |
+| Preta                                                                      |          1,334 (7.0%)          |              613 (7.6%)              |
+| Amarela                                                                    |           129 (0.7%)           |              62 (0.8%)               |
+| Parda                                                                      |          9,454 (50%)           |             4,014 (50%)              |
+| Indígena                                                                   |          16 (\<0.1%)           |              6 (\<0.1%)              |
+| Unknown                                                                    |             10,952             |                4,173                 |
+| Escolaridade                                                               |                                |                                      |
+| Menos de 8 anos de estudo                                                  |          14,908 (61%)          |             5,732 (58%)              |
+| Mais de 9 anos de estudo                                                   |          9,630 (39%)           |             4,171 (42%)              |
+| Unknown                                                                    |             5,395              |                2,343                 |
+| Estado de residência                                                       |                                |                                      |
+| Acre                                                                       |          26 (\<0.1%)           |              17 (0.1%)               |
+| Alagoas                                                                    |           420 (1.4%)           |              139 (1.1%)              |
+| Amapá                                                                      |          28 (\<0.1%)           |              20 (0.2%)               |
+| Amazonas                                                                   |           171 (0.6%)           |              96 (0.8%)               |
+| Bahia                                                                      |          1,532 (5.1%)          |              744 (6.1%)              |
+| Ceará                                                                      |          1,082 (3.6%)          |              366 (3.0%)              |
+| Distrito Federal                                                           |           133 (0.4%)           |              75 (0.6%)               |
+| Espirito Santo                                                             |           929 (3.1%)           |              413 (3.4%)              |
+| Goiás                                                                      |           169 (0.6%)           |              61 (0.5%)               |
+| Maranhão                                                                   |           406 (1.4%)           |              149 (1.2%)              |
+| Mato Grosso                                                                |           309 (1.0%)           |              166 (1.4%)              |
+| Mato Grosso Do Sul                                                         |           289 (1.0%)           |              128 (1.0%)              |
+| Minas Gerais                                                               |          4,651 (16%)           |             1,976 (16%)              |
+| Pará                                                                       |           419 (1.4%)           |              117 (1.0%)              |
+| Paraíba                                                                    |           834 (2.8%)           |              276 (2.3%)              |
+| Paraná                                                                     |          2,178 (7.3%)          |              765 (6.3%)              |
+| Pernambuco                                                                 |          1,305 (4.4%)          |              420 (3.4%)              |
+| Piauí                                                                      |           322 (1.1%)           |              104 (0.9%)              |
+| Rio De Janeiro                                                             |          1,652 (5.5%)          |              764 (6.3%)              |
+| Rio Grande Do Norte                                                        |           402 (1.3%)           |              181 (1.5%)              |
+| Rio Grande Do Sul                                                          |          1,772 (5.9%)          |             1,007 (8.3%)             |
+| Rondônia                                                                   |           165 (0.6%)           |              84 (0.7%)               |
+| Roraima                                                                    |          10 (\<0.1%)           |             12 (\<0.1%)              |
+| Santa Catarina                                                             |          1,037 (3.5%)          |              558 (4.6%)              |
+| São Paulo                                                                  |          9,225 (31%)           |             3,433 (28%)              |
+| Sergipe                                                                    |           213 (0.7%)           |              52 (0.4%)               |
+| Tocantins                                                                  |           160 (0.5%)           |              79 (0.6%)               |
+| Unknown                                                                    |               94               |                  44                  |
+| Região de residência                                                       |                                |                                      |
+| Centro Oeste                                                               |           900 (3.0%)           |              430 (3.5%)              |
+| Nordeste                                                                   |          6,516 (22%)           |             2,431 (20%)              |
+| Norte                                                                      |           979 (3.3%)           |              425 (3.5%)              |
+| Sudeste                                                                    |          16,457 (55%)          |             6,586 (54%)              |
+| Sul                                                                        |          4,987 (17%)           |             2,330 (19%)              |
+| Unknown                                                                    |               94               |                  44                  |
+| Neoplasia                                                                  |                                |                                      |
+| Neoplasia maligna da amígdala                                              |             0 (0%)             |             3,658 (30%)              |
+| Neoplasia maligna da base da língua                                        |          5,239 (18%)           |                0 (0%)                |
+| Neoplasia maligna da gengiva                                               |           943 (3.2%)           |                0 (0%)                |
+| Neoplasia maligna da orofaringe                                            |             0 (0%)             |             8,588 (70%)              |
+| Neoplasia maligna de outras partes e de partes não especificadas da boca   |          4,519 (15%)           |                0 (0%)                |
+| Neoplasia maligna de outras partes e de partes não especificadas da língua |          8,581 (29%)           |                0 (0%)                |
+| Neoplasia maligna do assoalho da boca                                      |          3,844 (13%)           |                0 (0%)                |
+| Neoplasia maligna do lábio                                                 |          2,514 (8.4%)          |                0 (0%)                |
+| Neoplasia maligna do palato                                                |          4,293 (14%)           |                0 (0%)                |
+| Estadiamento da lesão                                                      |                                |                                      |
+| Inicial                                                                    |          6,393 (28%)           |              980 (12%)               |
+| Avançado                                                                   |          16,644 (72%)          |             7,053 (88%)              |
+| Unknown                                                                    |             6,896              |                4,213                 |
+| Tempo para início do tratamento                                            |          65 (32, 107)          |             62 (33, 99)              |
 
 ## Tempo para início de tratamento de acordo com a Raça/Cor
 

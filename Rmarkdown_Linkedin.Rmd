@@ -1,6 +1,6 @@
 ---
-title: Desigualdades raciais no tempo para início do tratamento do câncer de boca
-  e orofaringe no Brasil, no período de 2013 a 2019
+title: "Desigualdades raciais no tempo para início do tratamento do câncer de boca
+  e orofaringe no Brasil, no período de 2013 a 2019"
 author: "Márcio V de G Affonso"
 date: "2022-11-28"
 output: github_document
@@ -24,6 +24,7 @@ library(haven)
 library(stargazer)
 library(readxl)
 library(usethis)
+library(knitr)
 
 ```
 
@@ -188,7 +189,8 @@ dados_of_cb %>%
          DESCRICAO, LOCTUDET_2, ESTADIAM, 
          TIT) %>% 
   mutate_at(vars(SEXO, RACACOR, INSTRUC, LOCTUDET_2, ESTADIAM), haven::as_factor) %>% 
-  tbl_summary(by = LOCTUDET_2)
+  tbl_summary(by = LOCTUDET_2) %>% 
+  as_kable()
 ```
 
 ## Tempo para início de tratamento de acordo com a Raça/Cor
